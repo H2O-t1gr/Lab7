@@ -245,7 +245,7 @@ function createDestinationText() {
 
 // ---------- Tasks (button handlers) ----------
 
-// Task 1: success handler, shows coordinates and accuracy
+// Task: success handler, shows coordinates and accuracy
 function showCoordinates(position) {
     const { latitude, longitude, accuracy } = position.coords;
 
@@ -254,7 +254,7 @@ function showCoordinates(position) {
         `<p>(with ${accuracy} meters accuracy)</p>`);
 }
 
-// Task 1: requests the current position
+// Task: requests the current position
 function showMyLocation() {
     if (!checkGeolocationSupport()) {
         showNoSupportAlert();
@@ -268,12 +268,12 @@ function showMyLocation() {
     );
 }
 
-// Task 2: success handler, shows distances
+// Task: success handler, shows distances
 function showDistances(position) {
     setBoxContent("distanceBox", createDistanceText(position.coords));
 }
 
-// Task 2: requests the current position for distance calculation
+// Task: requests the current position for distance calculation
 function showMyDistances() {
     if (!checkGeolocationSupport()) {
         showNoSupportAlert();
@@ -287,13 +287,13 @@ function showMyDistances() {
     );
 }
 
-// Task 3: success handler, shows data and adds a marker on every update
+// Task: success handler, shows data and adds a marker on every update
 function showTracking(position) {
     setBoxContent("watchBox", createTrackingText(position));
     addPositionMarker(position, "Відстеження");
 }
 
-// Task 3: starts watching the position
+// Task: starts watching the position
 function startWatch() {
     if (!checkGeolocationSupport()) {
         showNoSupportAlert();
@@ -312,7 +312,7 @@ function startWatch() {
     );
 }
 
-// Task 3: stops watching the position
+// Task: stops watching the position
 function stopWatch() {
     if (watchId === null) return;
 
@@ -321,13 +321,13 @@ function stopWatch() {
     setBoxContent("watchBox", "<p><i>Відстеження зупинено.</i></p>");
 }
 
-// Task 4: success handler, adds a marker and a hint
+// Task: success handler, adds a marker and a hint
 function showMapMarker(position) {
     addPositionMarker(position, "You are here");
     setBoxContent("mapBox", "<p>Маркер додано. Натисніть на нього.</p>");
 }
 
-// Task 4: requests the position and shows it on the map
+// Task: requests the position and shows it on the map
 function showMeOnMap() {
     if (!checkGeolocationSupport()) {
         showNoSupportAlert();
@@ -346,7 +346,7 @@ function showMeOnMap() {
     );
 }
 
-// Task 5: asks for destination coordinates and shows them on the map
+// Task: asks for destination coordinates and shows them on the map
 function setDestination() {
     const latitude = getCoordinateFromUser("Широта пункту призначення (від -90 до 90):", -90, 90);
     if (latitude === null) return;
@@ -359,7 +359,7 @@ function setDestination() {
     replaceDestinationMarker();
 }
 
-// Task 6: scrolls the map to the destination point
+// Task: scrolls the map to the destination point
 function scrollToDestination() {
     if (!destinationCoords) {
         showError("scrollBox", "Спочатку введіть координати (завдання 5).");
