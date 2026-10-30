@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторна робота №7</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Лабораторна робота №7. Робота з API-інтерфейсом Geolocation</h1>
+  <p class="student-info">Шликов Денис, 19</p>
+
+  <section class="task-block">
+    <p class="task-title">1. Поточні координати та точність визначення</p>
+    <button onclick="showMyLocation()">Визначити місцезнаходження</button>
+    <div class="result-area" id="locationBox"></div>
+  </section>
+
+  <section class="task-block">
+    <p class="task-title">2. Відстань до Коледжу та пірамід у Гізі</p>
+    <button onclick="showMyDistances()">Розрахувати відстань</button>
+    <div class="result-area" id="distanceBox"></div>
+  </section>
+
+  <section class="task-block">
+    <p class="task-title">3. Відстеження позиції (на карту додаються маркери)</p>
+    <button onclick="startWatch()">Watch me</button>
+    <button onclick="stopWatch()">Clear watch</button>
+    <div class="result-area" id="watchBox"></div>
+  </section>
+
+  <section class="task-block">
+    <p class="task-title">4. Карта з маркером і інформаційним вікном</p>
+    <button onclick="showMeOnMap()">Показати мене на карті</button>
+    <div class="result-area" id="mapBox"></div>
+    <div id="map"></div>
+  </section>
+
+  <section class="task-block">
+    <p class="task-title">5. Введення координат пункту призначення</p>
+    <button onclick="setDestination()">Ввести координати</button>
+    <div class="result-area" id="destinationBox"></div>
+  </section>
+
+  <section class="task-block">
+    <p class="task-title">6. Прокрутити карту до пункту призначення</p>
+    <button onclick="scrollToDestination()">Перейти до пункту</button>
+    <div class="result-area" id="scrollBox"></div>
+  </section>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
